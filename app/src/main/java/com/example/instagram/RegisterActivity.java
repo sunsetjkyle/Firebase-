@@ -68,20 +68,11 @@ public class RegisterActivity extends AppCompatActivity {
     private void sendVerificationEmail() {
         User=regAuth.getCurrentUser();
         if (User!=null){
-            User.sendEmailVerification().addOnSuccessListener(RegisterActivity.this, new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    Toast.makeText(RegisterActivity.this, "Verification email sent successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(RegisterActivity.this, SetupActivity.class));
-                    finish();
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(RegisterActivity.this, "Failed" , Toast.LENGTH_SHORT).show();
-
-                }
-            });
+            User.sendEmailVerification().addOnSuccessListener(RegisterActivity.this, unused -> {
+                Toast.makeText(RegisterActivity.this, "Verification email sent successfully", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(RegisterActivity.this, SetupActivity.class));
+                finish();
+            }).addOnFailureListener(e -> Toast.makeText(RegisterActivity.this, "Failed" , Toast.LENGTH_SHORT).show());
         }
 
     }
