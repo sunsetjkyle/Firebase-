@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="English (United Kingldom)"
         android:textColor="@color/grey"
+        android:gravity="center"
         android:layout_centerHorizontal="true"
         android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"/>
     <LinearLayout
