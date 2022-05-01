@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edittextbckg"
             android:padding="8dp"
+            android:inputType="textEmailAddress"
             android:id="@+id/register_email"
             android:hint="Enter your email address"/>
         <EditText
